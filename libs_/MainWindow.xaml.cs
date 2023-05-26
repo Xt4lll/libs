@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using JsonLibb;
 using Microsoft.Win32;
+using ThemeLib;
+using LangLib;
 
 namespace libs_
 {
@@ -23,6 +25,8 @@ namespace libs_
         public MainWindow()
         {
             InitializeComponent();
+            ChangeTheme.CheckTheme();
+            ChangeLang.CheckLang();
         }
 
         private void serializeBtn_Click(object sender, RoutedEventArgs e)
@@ -47,22 +51,22 @@ namespace libs_
 
         private void darkBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.Theme = "DarkTheme";
+            ChangeTheme.Theme = "DarkTheme";
         }
 
         private void whiteBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.Theme = "WhiteTheme";
+            ChangeTheme.Theme = "WhiteTheme";
         }
 
         private void engBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.Lang = "eng";
+            ChangeLang.Lang = "eng";
         }
 
         private void rusBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.Lang = "rus";
+            ChangeLang.Lang = "rus";
         }
     }
 }
